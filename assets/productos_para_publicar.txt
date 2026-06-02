@@ -1,0 +1,43 @@
+Nombre:
+Smoking Azul Marino
+
+Precio:
+1200
+
+Talle:
+XL
+
+Cantidad:
+10
+
+Descripción:
+El smoking azul marino es una verdadera pieza de estilo, inesperada e infinitamente elegante. La solapa negra se combina con un smoking azul marino intenso para lograr un contraste refinado. Junto con los pantalones de smoking azul marino clásicos, este look ofrece elegancia de pies a cabeza. Preséntese con confianza y preséntese en bodas y veladas de etiqueta. Confeccionado en el tejido Eco Stretch característico, hemos innovado el tradicional smoking azul marino para hombre con comodidad y flexibilidad.
+
+Modalidad:
+Alquiler
+
+Categoria:
+Trajes
+
+
+
+Nombre:
+Vestido Sarah Negro
+
+Precio:
+3600
+
+Talle:
+S
+
+Cantidad:
+6
+
+Descripción:
+Entra en escena con este precioso vestido midi de un solo hombro. Confeccionado con una tela estructurada y plisada, cuenta con un favorecedor detalle fruncido en el lateral que realza la silueta con elegancia. Una abertura en la parte trasera añade un toque de sensualidad al vestido.
+
+Modalidad: 
+Compra
+
+Categoria:
+Vestidos
