@@ -1,0 +1,25 @@
+/* Estilos personalizados para SweetAlert2 */
+.swal2-popup {
+    font-size: 0.875rem; /* Tamaño de fuente más pequeño */
+    border-radius: 15px; /* Ajusta el radio del borde */
+    padding: 1rem; /* Ajusta el padding */
+    background: #fff; /* Color de fondo */
+    color: #444; /* Color del texto */
+    max-width: 300px; /* Ancho máximo de la ventana emergente */
+    width: 90%; /* Ancho relativo */
+}
+
+.swal2-confirm {
+    background: #404252; /* Color de fondo del botón de confirmar */
+    border: none;
+    border-radius: 50px; /* Radio del borde del botón */
+    color: #fff; /* Color del texto del botón */
+    font-weight: 600; /* Grosor del texto del botón */
+    padding: 0.5rem 1rem; /* Padding del botón */
+    font-size: 1rem; /* Tamaño de la fuente del botón */
+    text-transform: uppercase; /* Texto en mayúsculas */
+}
+
+.swal2-confirm:hover {
+    background: #30363d; /* Color de fondo del botón al pasar el mouse */
+}

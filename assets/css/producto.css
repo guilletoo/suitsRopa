@@ -1,0 +1,138 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 30px;
+  /* Aumentar el padding del contenedor principal */
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+}
+
+.product-image {
+  flex: 0 0 40%;
+  padding-right: 10px;
+}
+
+.product-image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.product-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  /* Agregar relleno dentro de los detalles del producto */
+}
+
+.product-details h1 {
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+.product-details .product-price {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.product-details {
+  font-size: 20px;
+  color: #666;
+}
+
+.product-title {
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.product-sku,
+.product-price {
+  margin-bottom: 10px;
+}
+
+.product-quantity {
+  margin-bottom: 15px;
+}
+
+.product-quantity input {
+  width: 50px;
+  padding: 5px;
+  text-align: center;
+}
+
+.product-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.product-buttons button,
+.product-buttons form button {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  border-radius: 15px;
+}
+
+.add-to-cart {
+  text-transform: uppercase;
+  background-color: #e0e0e0;
+  color: #333;
+  margin-top: 10px;
+}
+
+.buy-now {
+  text-transform: uppercase;
+  background-color: #000;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.product-description {
+  margin-top: 15px;
+  padding: 10px;
+  /* Agregar relleno a la descripción del producto */
+  border-radius: 10px;
+  /* Bordes redondeados */
+}
+
+.product-description h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.product-description p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: 7px;
+    padding: 15px;
+  }
+
+  .product-image,
+  .product-details {
+    flex: none;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .product-buttons {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .product-title {
+    font-size: 22px;
+  }
+}

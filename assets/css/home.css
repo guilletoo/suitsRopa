@@ -1,0 +1,1046 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+
+/* Define variables de color que se utilizan a lo largo del CSS */
+:root {
+    --clr-main: #404252;
+    /* Color principal utilizado en fondos y textos */
+    --clr-main-light: #5c586e;
+    /* Versión más clara del color principal */
+    --clr-white: #d9dad6;
+    /* Color blanco utilizado para fondos y textos */
+    --clr-gray: #e2e2e2;
+    /* Color gris utilizado para fondos de secciones */
+    --clr-red: #c40f0f;
+    /* Color rojo utilizado para alertas y botones de eliminar */
+    --clr-main-dark: #2a2c36;
+}
+
+/* Resetea márgenes, relleno y ajusta el modelo de caja para todos los elementos */
+* {
+    margin: 0;
+    /* Elimina márgenes predeterminados */
+    padding: 0;
+    /* Elimina rellenos predeterminados */
+    box-sizing: border-box;
+    /* Incluye el padding y border en el ancho y alto total del elemento */
+    font-family: 'Poppins', sans-serif;
+    /* Aplica la fuente Poppins a todos los textos */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+input,
+textarea,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    background-color: var(--clr-main);
+    min-height: 100vh;
+    /* Asegura que el wrapper ocupe al menos el 100% de la altura de la ventana */
+}
+
+/* Permite que el main se expanda y ocupe el espacio disponible */
+main {
+    flex: 1;
+}
+
+/* Estilos para la barra lateral (aside) */
+aside {
+    padding: 1rem;
+    /* Añade espacio interior (padding) */
+    padding-right: 0;
+    /* Elimina padding derecho */
+    color: var(--clr-white);
+    /* Color de texto blanco */
+    position: sticky;
+    /* Posiciona la barra lateral de forma fija al hacer scroll */
+    top: 0;
+    /* Fija la barra lateral en la parte superior de la pantalla */
+    height: 100vh;
+    /* Ocupa toda la altura de la pantalla */
+    display: flex;
+    /* Utiliza flexbox para el contenido interno */
+    flex-direction: column;
+    /* Coloca los elementos en columna */
+    justify-content: space-between;
+    /* Distribuye el espacio entre los elementos */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.384);
+    /* Añade sombra a la barra lateral */
+}
+
+/* Estilos para el div rosa */
+.main-content {
+    width: calc(100% - 0%);
+    /* El main-content ocupa el resto de la pantalla */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5%;
+    min-height: 40vh;
+    /* Asegura que ocupe toda la pantalla */
+
+}
+
+.pink-section {
+    background-color: #add8e6da;
+    display: flex;
+    padding: 40px;
+    border-radius: 10px;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    /* Limita el tamaño en pantallas más grandes */
+}
+
+.image-container {
+    flex: 1;
+}
+
+.image-container img {
+    width: 100%;
+    border-radius: 10px;
+    clip-path: ellipse(100% 100% at 50% 100%);
+    /* Efecto de arco en la imagen */
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.content h4 {
+    font-size: 16px;
+    color: #555;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.content h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.content p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.cta-button {
+    padding: 10px 20px;
+    background-color: #0000004f;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 15px;
+}
+
+.cta-button:hover {
+    background-color: #333;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .aside {
+        width: 100%;
+        min-height: auto;
+    }
+
+    .main-content {
+        width: calc(100% - 0%);
+        /* El main-content ocupa el resto de la pantalla */
+
+    }
+
+    .pink-section {
+        flex-direction: column;
+        /* Cambia a columna en pantallas pequeñas */
+        align-items: center;
+        padding: 20px;
+    }
+
+    .image-container {
+        margin-bottom: 20px;
+        /* Añade margen debajo de la imagen */
+    }
+
+    .content {
+        text-align: center;
+    }
+
+    .content h2 {
+        font-size: 28px;
+    }
+
+    .cta-button {
+        align-self: center;
+    }
+}
+
+/* Fin de los estilos div */
+
+/* Estilos para decir las marcas */
+
+/* Contenedor general de la sección */
+.brand-section {
+    background-color: #ffdab9cc;
+    /* Color de fondo rosado claro */
+    padding: 20px;
+    width: calc(100% - 0%);
+    /* El main-content ocupa el resto de la pantalla */
+    border-radius: 10px;
+    padding-bottom: 30px;
+}
+
+/* Título de la sección */
+.section-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #535353;
+    text-align: center;
+}
+
+/* Contenedor de las tarjetas de marca */
+.brand-cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Tarjetas individuales */
+.brand-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(33.333% - 20px);
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.brand-info {
+    padding: 20px;
+}
+
+.brand-info h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.brand-info p {
+    font-size: 14px;
+    color: #666;
+}
+
+.imagen-marca {
+    flex: 1;
+
+}
+
+.imagen-marca img {
+    object-fit: cover;
+    object-position: 60% 8%;
+    border-radius: 10px;
+}
+
+/* Responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+    .brand-section {
+        margin-left: 0;
+    }
+
+    .brand-cards {
+        flex-direction: column;
+    }
+
+    .brand-card {
+        flex: 1 1 100%;
+    }
+}
+
+/* Fin de los estilos de marcas */
+
+/* Estilos para decir las cosas de la empresa */
+
+/* Contenedor general de la sección */
+.brand-section-1 {
+    background-color: #6a67ff93;
+    /* Color de fondo rosado claro */
+    padding: 20px;
+    width: calc(100% - 0%);
+    /* El main-content ocupa el resto de la pantalla */
+    border-radius: 10px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+/* Título de la sección */
+.section-title-1 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #535353;
+    text-align: center;
+}
+
+/* Contenedor de las tarjetas de marca */
+.brand-cards-1 {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Tarjetas individuales */
+.brand-card-1 {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(33.333% - 20px);
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.brand-card-1:hover {
+    transform: scale(1.05);
+}
+
+.brand-card-1 img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.brand-info-1 {
+    padding: 20px;
+}
+
+.brand-info-1 h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.brand-info-1 p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+    .brand-section-1 {
+        margin-left: 0;
+    }
+
+    .brand-cards-1 {
+        flex-direction: column;
+    }
+
+    .brand-card-1 {
+        flex: 1 1 100%;
+    }
+}
+
+/* Fin de los estilos de empresa */
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+/* Estilo para los botones del menú en la barra lateral */
+.boton-menu {
+    background-color: transparent;
+    /* Fondo transparente */
+    border: 0;
+    /* Elimina borde */
+    color: var(--clr-white);
+    /* Color del texto blanco */
+    cursor: pointer;
+    /* Cambia el cursor al pasar sobre el botón */
+    display: flex;
+    /* Utiliza flexbox */
+    align-items: center;
+    /* Alinea elementos en el centro verticalmente */
+    gap: 0.8rem;
+    /* Espacio entre icono y texto */
+    font-weight: 700;
+    /* Define un peso de fuente grueso */
+    padding: 1rem;
+    /* Añade relleno interno */
+    font-size: 0.88rem;
+    /* Tamaño de fuente para los botones del menú */
+    width: 100%;
+    /* El botón ocupa todo el ancho disponible */
+}
+
+/* Estilos adicionales cuando un botón del menú está activo */
+.boton-menu.active {
+    background-color: var(--clr-white);
+    /* Cambia el fondo a blanco */
+    color: var(--clr-main);
+    /* Cambia el color del texto al color principal */
+    border-top-left-radius: 1rem;
+    /* Borde superior izquierdo redondeado */
+    border-bottom-left-radius: 1rem;
+    /* Borde inferior izquierdo redondeado */
+    position: relative;
+    /* Posicionamiento relativo para usar pseudo-elementos */
+}
+
+/* Pseudo-elemento para agregar un efecto visual arriba del botón activo */
+.boton-menu.active::before {
+    content: '';
+    /* No muestra texto, solo un contenedor vacío */
+    position: absolute;
+    /* Posicionamiento absoluto relativo al botón */
+    width: 1rem;
+    /* Ancho del pseudo-elemento */
+    height: 2rem;
+    /* Alto del pseudo-elemento */
+    bottom: 100%;
+    /* Posiciona el pseudo-elemento justo encima del botón */
+    right: 0;
+    /* Alinea el pseudo-elemento a la derecha */
+    background-color: transparent;
+    /* Fondo transparente */
+    border-bottom-right-radius: .5rem;
+    /* Esquina inferior derecha redondeada */
+    box-shadow: 0 1rem 0 var(--clr-white);
+    /* Sombra para crear el efecto de curva */
+}
+
+/* Pseudo-elemento para agregar un efecto visual debajo del botón activo */
+.boton-menu.active::after {
+    content: '';
+    /* No muestra texto, solo un contenedor vacío */
+    position: absolute;
+    /* Posicionamiento absoluto relativo al botón */
+    width: 1rem;
+    /* Ancho del pseudo-elemento */
+    height: 2rem;
+    /* Alto del pseudo-elemento */
+    top: 100%;
+    /* Posiciona el pseudo-elemento justo debajo del botón */
+    right: 0;
+    /* Alinea el pseudo-elemento a la derecha */
+    background-color: transparent;
+    /* Fondo transparente */
+    border-top-right-radius: .5rem;
+    /* Esquina superior derecha redondeada */
+    box-shadow: 0 -1rem 0 var(--clr-white);
+    /* Sombra para crear el efecto de curva */
+}
+
+/* Rota el icono del botón de menú 90 grados */
+.boton-menu>i.bi-hand-index-thumb-fill,
+.boton-menu>i.bi-hand-index-thumb {
+    transform: rotateZ(90deg);
+    /* Rota el icono del dedo 90 grados */
+}
+
+.boton-carrito {
+    margin-top: 2rem;
+}
+
+/* Estilo para el numerito en el carrito (indicador de cantidad) */
+.numerito {
+    background-color: var(--clr-white);
+    /* Fondo blanco */
+    color: var(--clr-main);
+    /* Texto en color principal */
+    padding: .15rem .25rem;
+    /* Relleno interno */
+    border-radius: .25rem;
+    /* Bordes redondeados */
+}
+
+/* Estilo cuando el botón del carrito está activo */
+.boton-carrito.active .numerito {
+    background-color: var(--clr-main);
+    /* Fondo del numerito cambia al color principal */
+    color: var(--clr-white);
+    /* Texto del numerito cambia a blanco */
+}
+
+.texto-footer {
+    color: var(--clr-main-light);
+    font-size: .85rem;
+}
+
+/* Estilo para la sección principal del contenido */
+main {
+    background-color: var(--clr-white);
+    /* Fondo blanco */
+    margin: 1rem;
+    /* Margen alrededor del contenido principal */
+    margin-left: 0;
+    /* Elimina margen izquierdo */
+    border-radius: 2rem;
+    /* Bordes redondeados */
+    padding: 3rem;
+    /* Relleno interno del contenido principal */
+}
+
+.titulo-principal {
+    color: var(--clr-main);
+    margin-bottom: 2rem;
+}
+
+/* Estilo para el contenedor de productos */
+.contenedor-productos {
+    display: grid;
+    /* Define un grid layout */
+    grid-template-columns: repeat(3, 1fr);
+    /* Tres columnas iguales */
+    gap: 1rem;
+    /* Espacio entre elementos */
+}
+
+.producto {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    /* Aumenta el ancho del contenedor */
+    height: auto;
+    /* Aumenta la altura del contenedor */
+}
+
+/* Estilo para la imagen de producto */
+.producto-imagen {
+    width: 100%;
+    /* La imagen ocupa todo el ancho disponible */
+    border-radius: 1rem;
+    /* Bordes redondeados */
+    height: auto;
+    /* Altura automática basada en el ancho */
+    object-fit: cover;
+    /* Ajusta la imagen para cubrir sin deformarse */
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Estilo para los detalles del producto */
+.producto-detalles {
+    background-color: var(--clr-main);
+    /* Fondo en color principal */
+    color: var(--clr-white);
+    /* Texto en blanco */
+    padding: .5rem;
+    /* Relleno interno */
+    border-radius: 1rem;
+    /* Bordes redondeados */
+    margin-top: -2rem;
+    /* Superpone los detalles sobre la imagen */
+    position: relative;
+    /* Posicionamiento relativo */
+    display: flex;
+    /* Utiliza flexbox */
+    flex-direction: column;
+    /* Elementos en columna */
+    gap: .25rem;
+    /* Espacio entre detalles */
+    z-index: 1;
+    /*hace que el texto debajo, este por delante de la foto */
+
+}
+
+.producto-titulo {
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.producto-agregar {
+    border: 0;
+    background-color: var(--clr-white);
+    color: var(--clr-main);
+    padding: .4rem;
+    text-transform: uppercase;
+    border-radius: 2rem;
+    cursor: pointer;
+    border: 2px solid var(--clr-white);
+    transition: background-color .2s, color .2s;
+    width: 100%;
+    /* Ocupar todo el ancho disponible */
+}
+
+.producto-agregar:hover {
+    background-color: var(--clr-main);
+    color: var(--clr-white);
+}
+
+/** CARRITO **/
+
+.contenedor-carrito {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.carrito-vacio,
+.carrito-comprado {
+    color: var(--clr-main);
+}
+
+.carrito-productos {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.carrito-producto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--clr-gray);
+    color: var(--clr-main);
+    padding: .5rem;
+    padding-right: 1.5rem;
+    border-radius: 1rem;
+}
+
+.carrito-producto-imagen {
+    width: 4rem;
+    border-radius: 1rem;
+}
+
+.carrito-producto small {
+    font-size: .75rem;
+}
+
+.carrito-producto-eliminar {
+    border: 0;
+    background-color: transparent;
+    color: var(--clr-red);
+    cursor: pointer;
+}
+
+.carrito-acciones {
+    display: flex;
+    justify-content: space-between;
+}
+
+.carrito-acciones-vaciar {
+    border: 0;
+    background-color: var(--clr-gray);
+    padding: 1rem;
+    border-radius: 1rem;
+    color: var(--clr-main);
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.carrito-acciones-derecha {
+    display: flex;
+}
+
+.carrito-acciones-total {
+    display: flex;
+    background-color: var(--clr-gray);
+    padding: 1rem;
+    color: var(--clr-main);
+    text-transform: uppercase;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    gap: 1rem;
+}
+
+.carrito-acciones-comprar {
+    border: 0;
+    background-color: var(--clr-main);
+    padding: 1rem;
+    color: var(--clr-white);
+    text-transform: uppercase;
+    cursor: pointer;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.header-mobile {
+    display: none;
+}
+
+.close-menu {
+    display: none;
+}
+
+.disabled {
+    display: none;
+}
+
+.logo-container {
+    position: relative;
+    /* Necesario para que los elementos hijos con posición absoluta se alineen correctamente */
+    height: 3vh;
+    /* Ajusta según sea necesario */
+}
+
+.logo-container img {
+    position: absolute;
+    /* Posiciona el SVG de forma absoluta dentro del contenedor */
+    left: 20%;
+    /* Ajusta la coordenada horizontal */
+    top: 75%;
+    /* Ajusta la coordenada vertical */
+    transform: translate(-50%, -50%);
+    /* Opcional: centra el SVG en el punto de referencia */
+    max-width: 90%;
+    /* Asegura que el SVG no se desborde del contenedor */
+    height: auto;
+    /* Mantiene la relación de aspecto */
+}
+
+/* Reglas para pantallas con un ancho máximo de 850px */
+@media screen and (max-width: 850px) {
+
+    /* Define un layout de tres columnas para contenedor de productos */
+    .contenedor-productos {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/* Reglas para pantallas con un ancho máximo de 675px */
+@media screen and (max-width: 675px) {
+
+    /* Ajusta el contenedor de productos a dos columnas */
+    .contenedor-productos {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Reglas para pantallas con un ancho máximo de 600px */
+@media screen and (max-width: 600px) {
+
+    /* Ajusta el wrapper a un layout flexible en columna */
+    /* Oculta la imagen dentro del contenedor de logo */
+
+    .wrapper {
+        display: flex;
+        /* O grid, según sea necesario */
+        flex-direction: column;
+        width: 100%;
+        /* Asegúrate de que ocupe todo el ancho disponible */
+        max-width: 100%;
+        /* Limita el ancho máximo */
+        overflow-x: hidden;
+        /* Evita el desbordamiento horizontal */
+    }
+
+    /* Ajusta la barra lateral para ser fija y visible con transición */
+    aside {
+        position: fixed;
+        /* Fija la barra lateral en la pantalla */
+        z-index: 11;
+        /* Coloca la barra lateral por encima de otros elementos */
+        background-color: var(--clr-main);
+        /* Fondo en color principal */
+        left: 0;
+        /* Alinea la barra lateral a la izquierda */
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .75);
+        /* Aplica una sombra extensa */
+        transform: translateX(-100%);
+        /* Oculta la barra lateral fuera de la vista */
+        opacity: 0;
+        /* Hace la barra lateral invisible */
+        visibility: hidden;
+        /* Esconde la barra lateral visualmente */
+        transition: .2s;
+        /* Define una transición suave para mostrar/ocultar */
+    }
+
+    /* Muestra la barra lateral cuando se activa */
+    .aside-visible {
+        transform: translateX(0);
+        /* Mueve la barra lateral a su posición visible */
+        opacity: 2;
+        /* Establece opacidad completa */
+        visibility: visible;
+        /* Hace visible la barra lateral */
+    }
+
+    /* Oculta los pseudo-elementos para botones de menú activos */
+    .boton-menu.active::before,
+    .boton-menu.active::after {
+        display: none;
+        /* Oculta los pseudo-elementos */
+    }
+
+    /* Ajusta los márgenes y rellenos del contenido principal */
+    main {
+        margin: 1rem;
+        /* Margen alrededor del contenido */
+        margin-top: 0;
+        /* Elimina margen superior */
+        padding: 2rem;
+        /* Añade espacio interno al contenido */
+    }
+
+    /* Ajusta el contenedor de productos a dos columnas */
+    .contenedor-productos {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Estilo para el encabezado móvil */
+    .header-mobile {
+        padding: 1rem;
+        /* Añade espacio interno */
+        display: flex;
+        /* Utiliza flexbox */
+        justify-content: space-between;
+        /* Distribuye elementos a ambos extremos */
+        align-items: center;
+        /* Alinea elementos verticalmente al centro */
+    }
+
+    /* Hace que el logo no se muestre en el aside en el menú móvil */
+    aside .logo-container {
+        display: none;
+    }
+
+    /* Estilo para los botones de abrir y cerrar menú en móvil */
+    .open-menu,
+    .close-menu {
+        background-color: transparent;
+        /* Fondo transparente */
+        color: var(--clr-gray);
+        /* Texto en color gris */
+        border: 0;
+        /* Sin bordes */
+        font-size: 2rem;
+        /* Tamaño grande para los botones */
+        cursor: pointer;
+        /* Cambia el cursor al pasar sobre el botón */
+    }
+
+    /* Posiciona y muestra el botón de cerrar menú */
+    .close-menu {
+        display: block;
+        /* Muestra el botón */
+        position: absolute;
+        /* Posicionamiento absoluto */
+        top: 1rem;
+        /* Alinea en la parte superior */
+        right: 1rem;
+        /* Alinea a la derecha */
+    }
+
+    /* Ajusta el layout de productos en el carrito */
+    .carrito-producto {
+        gap: 1rem;
+        /* Espacio entre elementos del producto */
+        flex-wrap: wrap;
+        /* Envuelve los elementos si es necesario */
+        justify-content: flex-start;
+        /* Alinea elementos al inicio */
+        padding: .5rem;
+        /* Añade espacio interno */
+    }
+
+    /* Oculta la columna de subtotal en el carrito */
+    .carrito-producto-subtotal {
+        display: none;
+        /* No muestra el subtotal */
+    }
+
+    /* Ajusta el layout de las acciones del carrito */
+    .carrito-acciones {
+        flex-wrap: wrap;
+        /* Envuelve los elementos si es necesario */
+        row-gap: 1rem;
+        /* Espacio vertical entre filas */
+    }
+}
+
+/* Reglas para pantallas con un ancho máximo de 400px */
+@media screen and (max-width: 400px) {
+
+    /* Ajusta el contenedor de productos a una sola columna */
+    .contenedor-productos {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Estilos para Contacto */
+
+.container-contacto {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+}
+
+.detalles-empresa {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.detalles-contacto {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.form-contacto {
+    margin-top: 20px;
+}
+
+.form-contacto h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.form-contacto p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Estilo para hacer el iframe responsive */
+.responsive-iframe {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    /* Mantener proporción 16:9 */
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.responsive-iframe iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .container-contacto {
+        flex-direction: column;
+
+    }
+
+    .detalles-empresa,
+    .detalles-contacto {
+        flex: none;
+        width: 100%;
+    }
+}
+
+/* Fin estilos Contacto */
+
+
+/* --Estilos para el contenedor de Busqueda-- */
+
+.buscador {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 2rem;
+    /* Espaciado inferior */
+    max-width: 600px;
+    /* Ajusta el ancho máximo según tu preferencia */
+    width: 100%;
+    /* Mantener el ancho del 100% en pantallas pequeñas */
+    margin: 0 auto;
+    /* Centrar en pantallas grandes */
+}
+
+.buscador input[type="search"] {
+    flex: 1;
+    padding: 0.75rem;
+    border: 2px solid var(--clr-main);
+    border-right: none;
+    /* Eliminar borde derecho */
+    border-radius: 1rem 0 0 1rem;
+    /* Redondeado solo a la izquierda */
+    font-size: 1rem;
+    color: var(--clr-main-dark);
+    background-color: #fff;
+}
+
+.buscador button {
+    background-color: var(--clr-main);
+    color: var(--clr-white);
+    border: 2px solid var(--clr-main);
+    border-left: none;
+    /* Eliminar borde izquierdo */
+    border-radius: 0 1rem 1rem 0;
+    /* Redondeado solo a la derecha */
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.buscador button .mdi {
+    font-size: 1rem;
+    /* Tamaño del icono */
+}
+
+#contenedor-productos {
+    margin-top: 2rem;
+    /* Ajusta el margen superior */
+}
+
+@media (max-width: 768px) {
+    .buscador input[type="search"] {
+        /* Cambia aquí de text a search */
+        font-size: 0.875rem;
+        padding: 0.5rem;
+    }
+
+    .buscador button {
+        padding: 0.5rem;
+    }
+
+    .buscador button .mdi {
+        font-size: 1rem;
+    }
+}
+
+/* --Fin estilos para el contenedor de Busqueda-- */

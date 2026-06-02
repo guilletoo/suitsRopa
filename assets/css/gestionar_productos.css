@@ -1,0 +1,390 @@
+@import url('../css/home.css');
+
+/* Estilos del modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Contenido del modal */
+.modal-content {
+    background-color: var(--clr-white);
+    color: var(--clr-main-dark);
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+    border-radius: 1rem;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Clase para mostrar el modal */
+.modal.show .modal-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Botón cerrar */
+.close {
+    color: #020000;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--clr-red);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 600px) {
+    .modal-content {
+        width: 90%;
+        margin: auto;
+        border-radius: 1rem;
+    }
+}
+
+/* Contenedor del formulario */
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: var(--clr-white);
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Título del formulario */
+.form-title {
+    color: var(--clr-main);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    padding-top: 1.5rem;
+}
+
+.form-subtitle {
+    color: var(--clr-red);
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Agrupación de elementos del formulario */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+/* Etiquetas de los inputs */
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--clr-main);
+    font-weight: bold;
+}
+
+/* Estilo para los inputs de texto y número */
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--clr-main-light);
+    border-radius: 2rem;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    background-color: #fff;
+    color: var(--clr-main-dark);
+}
+
+/* Enfoque para inputs, select y textarea */
+.form-group input[type="text"]:focus,
+.form-group input[type="number"]:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--clr-main);
+    box-shadow: 0 0 0 2px rgba(66, 69, 83, 0.527);
+}
+
+/* Quita el selector de numeros de los inputs number */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Para Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+/* Estilo para el textarea */
+.form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+/* Estilo para el select */
+.form-group select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding-right: 2.5rem;
+}
+
+.content-select select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--clr-main-light);
+    border-radius: 2rem;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    outline: none;
+    background: #fff;
+    color: #333;
+}
+
+.content-select select:focus {
+    border-color: var(--clr-main);
+    box-shadow: 0 0 0 2px rgba(66, 69, 83, 0.527);
+}
+
+/* Estilo para el input de archivo como campo de texto */
+.file-upload {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--clr-main-light);
+    border-radius: 2rem;
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+}
+
+.file-upload input[type="file"] {
+    display: none;
+}
+
+.file-upload input[type="text"] {
+    flex: 1;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 0;
+    font-size: 1rem;
+    color: var(--clr-main-dark);
+    background-color: #fff;
+}
+
+.file-upload-btn {
+    background-color: var(--clr-main);
+    color: var(--clr-white);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.file-upload-btn:hover {
+    background-color: var(--clr-main-light);
+}
+
+/* Botón de actualización del perfil */
+.update-profile-btn {
+    background-color: var(--clr-main);
+    color: var(--clr-white);
+    border: none;
+    border-radius: 2rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.update-profile-btn:hover {
+    background-color: var(--clr-main-light);
+}
+
+/* Botón para eliminar la cuenta */
+.delete-account-btn {
+    background-color: var(--clr-red);
+    color: var(--clr-white);
+    border: none;
+    border-radius: 2rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.delete-account-btn:hover {
+    background-color: #a00d0d;
+}
+
+/* Estilos para la tabla de productos */
+.table-container {
+    overflow-x: auto;
+}
+
+/* Estilos para la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    /* Fija el ancho de las celdas */
+}
+
+/* Ajustes para las celdas */
+th,
+td {
+    border: 1px solid var(--clr-main-light);
+    padding: 0.75rem;
+    text-align: center;
+    word-wrap: break-word;
+    /* Ajusta el contenido */
+    min-width: 100px;
+    /* Evita la compresión */
+}
+
+th {
+    background-color: var(--clr-main);
+    color: var(--clr-white);
+}
+
+td {
+    color: var(--clr-main-dark);
+}
+
+/* Estilos para la celda que contiene los iconos */
+.actions {
+    text-align: center;
+    /* Centrar los iconos horizontalmente */
+}
+
+/* Estilos para los iconos dentro de la tabla */
+.actions .mdi {
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+    transition: background-color 0.3s ease;
+    /* Transición suave para el hover */
+}
+
+/* Añadir espacio entre los iconos */
+.actions .edit-icon {
+    color: #4CAF50;
+    /* Color verde para el icono de editar */
+    margin-right: 8px;
+    /* Espacio entre los iconos */
+    margin-left: 8px;
+    /* Espacio entre los iconos */
+}
+
+/* Hover para cambiar el color de fondo y darle un efecto visual */
+.actions .mdi:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    /* Fondo al pasar el mouse */
+    border-radius: 10px;
+    /* Redondeo del fondo */
+}
+
+/* Botón de editar (verde) */
+.edit-btn {
+    width: 40px;
+    /* Ancho del botón */
+    height: 40px;
+    /* Alto del botón */
+    color: #28a745;
+    /* Verde */
+    display: inline-block;
+    /* Evita que los botones ocupen todo el ancho */
+}
+
+.edit-btn:hover {
+    background-color: rgba(40, 167, 69, 0.1);
+    border-radius: 4px;
+}
+
+/* Estilos responsive */
+@media (max-width: 768px) {
+
+    th,
+    td {
+        padding: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    th,
+    td {
+        padding: 0.5rem;
+        font-size: 13px;
+    }
+
+    td img {
+        width: 100%;
+        height: auto;
+    }
+
+    main {
+        overflow-x: auto;
+    }
+}
+
+@media (max-width: 360px) {
+
+    th,
+    td {
+        padding: 0.1rem;
+        font-size: 8px;
+    }
+
+    td img {
+        width: 60px;
+        height: auto;
+    }
+}
+
+@media (max-width: 375px) {
+
+    th,
+    td {
+        padding: 0.25rem;
+        font-size: 12px;
+    }
+
+    td img {
+        width: 40px;
+        height: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    table {
+        min-width: 600px;
+        /* Evita la compresión excesiva */
+    }
+}
